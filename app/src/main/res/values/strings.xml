@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">OrmliteDemo</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="user.add">Add</string>
+    <string name="user.name">Name</string>
+    <string name="user.description">Description</string>
+    <string name="user.group.count">Count</string>
+    <string name="group.no">No</string>
+    <string name="title_activity_group">GroupActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_groups">GroupsActivity</string>
+
+</resources>

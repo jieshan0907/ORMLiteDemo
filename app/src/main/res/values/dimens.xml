@@ -1,0 +1,13 @@
+<resources>
+    <dimen name="gap">8dp</dimen>
+    <dimen name="gapx2">16dp</dimen>
+
+    <dimen name="circle.size">40dp</dimen>
+
+    <dimen name="font.bigger">28sp</dimen>
+    <dimen name="font.big">24sp</dimen>
+    <dimen name="font.normal">20sp</dimen>
+    <dimen name="font.small">16sp</dimen>
+    <dimen name="font.smaller">12sp</dimen>
+
+</resources>
