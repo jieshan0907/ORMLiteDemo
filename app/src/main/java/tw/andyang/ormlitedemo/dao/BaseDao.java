@@ -83,14 +83,6 @@ public abstract class BaseDao<T, ID> {
         }
     }
 
-    public T maxOfFieldItem(String field) throws Exception {
-        return dao.queryBuilder().orderBy(field, false).limit(1L).query().get(0);
-    }
-
-    public T minOfFieldItem(String field) throws Exception {
-        return dao.queryBuilder().orderBy(field, true).limit(1L).query().get(0);
-    }
-
     /**
      * get all data
      *
@@ -120,6 +112,14 @@ public abstract class BaseDao<T, ID> {
             e.printStackTrace();
             return Collections.emptyList();
         }
+    }
+
+    public T maxOfFieldItem(String field) throws Exception {
+        return dao.queryBuilder().orderBy(field, false).limit(1L).query().get(0);
+    }
+
+    public T minOfFieldItem(String field) throws Exception {
+        return dao.queryBuilder().orderBy(field, true).limit(1L).query().get(0);
     }
 
     public QueryBuilder<T, ID> getQueryBuilder() {

@@ -20,8 +20,9 @@ public class MainActivity extends AppCompatActivity {
     private UserDao dao;
     private UserAdapter adapter;
     private int times;
+    private boolean isMove = false;
     private ItemTouchHelper touchHelper = new ItemTouchHelper(
-            new ItemTouchHelper.SimpleCallback(ItemTouchHelper.UP|ItemTouchHelper.DOWN, ItemTouchHelper.RIGHT){
+            new ItemTouchHelper.SimpleCallback(ItemTouchHelper.UP | ItemTouchHelper.DOWN, ItemTouchHelper.RIGHT) {
                 @Override
                 public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder source, RecyclerView.ViewHolder target) {
                     int sourcePosition = source.getAdapterPosition();
@@ -54,8 +55,16 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                if(event.getAction() == MotionEvent.ACTION_UP) {
-                    adapter.notifyDataSetChanged();
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_MOVE:
+                        isMove = true;
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        if (isMove) {
+                            adapter.notifyDataSetChanged();
+                        }
+                        isMove = false;
+                        break;
                 }
                 return false;
             }
